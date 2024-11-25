@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "445662801225",
+    "project_id": "gestaoestacionamento-4edeb",
+    "storage_bucket": "gestaoestacionamento-4edeb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445662801225:android:0638a81e17f72582e23e98",
+        "android_client_info": {
+          "package_name": "br.edu.fatecpg.gestaoestacionamento"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_w-rKK8nj6RlmO1GC4wne-JQnP5mMUDg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

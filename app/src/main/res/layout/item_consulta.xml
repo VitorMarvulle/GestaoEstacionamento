@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="40dp"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true"> <!-- Adicionado para evitar problemas de padding nas bordas -->>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:background="@drawable/custom_edittext"
+android:padding="12dp"
+android:layout_margin="4dp"> <!-- Adicionada margem interna para destacar a borda -->
+
+<TextView
+    android:id="@+id/txtNome"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Nome"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    android:textColor="@color/black" />
+
+<TextView
+    android:id="@+id/txtTelefone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Telefone"
+    android:textSize="14sp"
+    android:textColor="@color/black" />
+
+<TextView
+    android:id="@+id/txtData"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Data"
+    android:textSize="14sp"
+    android:textColor="@color/black" />
+
+<TextView
+    android:id="@+id/txtPlaca"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Placa do Veículo"
+    android:textSize="14sp"
+    android:textColor="@color/black" />
+
+<TextView
+    android:id="@+id/txtCidade"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Cidade"
+    android:textSize="14sp"
+    android:textColor="@color/black" />
+
+<TextView
+    android:id="@+id/txtEstado"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Estado"
+    android:textSize="14sp"
+    android:textColor="@color/black" />
+
+<TextView
+    android:id="@+id/txtNumero"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Número"
+    android:textSize="14sp"
+    android:textColor="@color/black" />
+
+<TextView
+    android:id="@+id/txtRua"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Rua"
+    android:textSize="14sp"
+    android:textColor="@color/black" />
+
+</LinearLayout>
+    </androidx.cardview.widget.CardView>
