@@ -26,6 +26,7 @@
 
         <activity android:name=".view.AdministradorActivity" />
         <activity android:name=".view.MotoristaActivity" />
+        <activity android:name=".view.MotoristaCardActivity" />
 
     </application>
 

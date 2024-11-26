@@ -11,81 +11,100 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="272dp"
+        android:layout_margin="4dp"
         android:background="@drawable/custom_edittext"
-        android:padding="12dp"
-        android:layout_margin="4dp">
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Frase Olá, $nomeUsuario -->
+        <TextView
+            android:id="@+id/txtSaudacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Olá, $nomeUsuario"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtReserva"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Sua reserva:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
 
         <TextView
             android:id="@+id/txtNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nome"
+            android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
-
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Data"
-            android:textSize="14sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/txtPlaca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Placa do Veículo"
-            android:textSize="14sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/txtRua"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Rua"
-            android:textSize="14sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/txtNumero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Número"
-            android:textSize="14sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/txtCidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cidade"
-            android:textSize="14sp"
-            android:textColor="@color/black" />
-
+            android:textColor="@color/black"
+            android:textSize="14sp" />
         <TextView
             android:id="@+id/txtEstado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Estado"
-            android:textSize="14sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
-
-        <!-- Botão de Excluir -->
         <Button
             android:id="@+id/btnExcluir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Excluir"
-            android:textColor="@android:color/white"
-            android:background="@color/titulo"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
-            android:layout_gravity="center_horizontal" />
+            android:background="@color/titulo"
+            android:text="Excluir"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

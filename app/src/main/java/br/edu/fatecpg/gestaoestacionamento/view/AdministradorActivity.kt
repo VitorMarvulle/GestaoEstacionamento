@@ -22,7 +22,6 @@ class AdministradorActivity : AppCompatActivity() {
     private lateinit var reservaAdapter: ReservaAdapter
     private lateinit var reservasList: MutableList<Reserva>
 
-    // Definindo uma tag para logar
     private val TAG = "AdministradorActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +36,11 @@ class AdministradorActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerViewReservas)
         recyclerView.layoutManager = LinearLayoutManager(this)
         reservasList = mutableListOf()
-        reservaAdapter = ReservaAdapter(reservasList)
+
+        // Passando a função de exclusão para o adaptador
+        reservaAdapter = ReservaAdapter(reservasList) { reservaId ->
+            excluirReserva(reservaId)  // Chama a função para excluir a reserva
+        }
         recyclerView.adapter = reservaAdapter
 
         loadReservas()
@@ -49,24 +52,39 @@ class AdministradorActivity : AppCompatActivity() {
             .orderBy("timestamp", Query.Direction.DESCENDING) // Ordena por timestamp
             .get()
             .addOnSuccessListener { documents ->
-
-
                 reservasList.clear()
                 for (document in documents) {
                     try {
-                        val consulta = document.toObject(Reserva::class.java)
-                        reservasList.add(consulta)
-                        Log.d(TAG, "Consulta carregada: ${consulta.nome}")
+                        val reserva = document.toObject(Reserva::class.java)
+                        reserva.id = document.id // Atribuindo o ID da reserva
+                        reservasList.add(reserva)
                     } catch (e: Exception) {
-                        Log.e(TAG, "loadConsultas: Erro ao converter documento para objeto Consulta", e)
+                        Log.e(TAG, "Erro ao converter documento para objeto Reserva", e)
                     }
                 }
-
                 reservaAdapter.notifyDataSetChanged() // Atualiza o RecyclerView
             }
             .addOnFailureListener { exception ->
-                Log.e(TAG, "loadConsultas: Erro ao carregar as consultas", exception)
-                Toast.makeText(this, "Erro ao carregar as consultas: ${exception.message}", Toast.LENGTH_SHORT).show()
+                Log.e(TAG, "Erro ao carregar as reservas", exception)
+                Toast.makeText(this, "Erro ao carregar as reservas: ${exception.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun excluirReserva(reservaId: String) {
+        // Deletar o documento da reserva no Firestore
+        firestore.collection("reservas").document(reservaId).delete()
+            .addOnSuccessListener {
+                // Exibir uma mensagem de sucesso
+                Toast.makeText(this, "Reserva excluída com sucesso!", Toast.LENGTH_SHORT).show()
+                // Atualizar a lista local e o RecyclerView
+                val position = reservasList.indexOfFirst { it.id == reservaId }
+                if (position != -1) {
+                    reservasList.removeAt(position)
+                    reservaAdapter.notifyItemRemoved(position)
+                }
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Erro ao excluir reserva: ${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
 }

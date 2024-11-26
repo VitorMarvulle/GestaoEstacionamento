@@ -35,40 +35,8 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/edtNome"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/custom_edittext"
-                android:hint="Nome"
-                android:textSize="14sp"
-                android:padding="8dp"
-                android:textColor="@color/black" />
 
-            <EditText
-                android:id="@+id/edtTel"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/custom_edittext"
-                android:hint="Telefone"
-                android:inputType="phone"
-                android:textSize="14sp"
-                android:padding="8dp"
-                android:textColor="@color/black" />
 
-            <EditText
-                android:id="@+id/edtData"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/custom_edittext"
-                android:hint="Data"
-                android:inputType="date"
-                android:textSize="14sp"
-                android:padding="8dp"
-                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/edtPlacaVeiculo"
@@ -77,9 +45,9 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/custom_edittext"
                 android:hint="Placa do veículo"
-                android:textSize="14sp"
                 android:padding="8dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/edtCidade"
@@ -88,9 +56,9 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/custom_edittext"
                 android:hint="Cidade"
-                android:textSize="14sp"
                 android:padding="8dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/edtEstado"
@@ -99,9 +67,20 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/custom_edittext"
                 android:hint="Estado"
-                android:textSize="14sp"
                 android:padding="8dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtRua"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/custom_edittext"
+                android:hint="Rua"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/edtNumero"
@@ -111,20 +90,11 @@
                 android:background="@drawable/custom_edittext"
                 android:hint="Número"
                 android:inputType="number"
-                android:textSize="14sp"
                 android:padding="8dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
-            <EditText
-                android:id="@+id/edtRua"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/custom_edittext"
-                android:hint="Rua"
-                android:textSize="14sp"
-                android:padding="8dp"
-                android:textColor="@color/black" />
+
 
 
             <Button
@@ -142,9 +112,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="12dp"
+                android:backgroundTint="@color/purple"
                 android:text="Sair"
-                android:textSize="14sp"
-                android:backgroundTint="@color/purple" />
+                android:textSize="14sp" />
 
         </LinearLayout>
 

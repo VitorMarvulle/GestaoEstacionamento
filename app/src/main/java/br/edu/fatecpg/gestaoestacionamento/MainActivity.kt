@@ -6,8 +6,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.fatecpg.gestaoestacionamento.databinding.ActivityMainBinding
 import br.edu.fatecpg.gestaoestacionamento.view.CadastroActivity
-import br.edu.fatecpg.gestaoestacionamento.view.MotoristaActivity
 import br.edu.fatecpg.gestaoestacionamento.view.AdministradorActivity
+import br.edu.fatecpg.gestaoestacionamento.view.MotoristaActivity
+import br.edu.fatecpg.gestaoestacionamento.view.MotoristaCardActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -59,10 +60,25 @@ class MainActivity : AppCompatActivity() {
                                             finish()
                                         } else if (tipoUsuario == "Motorista") {
                                             // Redireciona para a tela do Paciente
-                                            val intent = Intent(this, MotoristaActivity::class.java)
-                                            intent.putExtra("nome", nome)
-                                            startActivity(intent)
-                                            finish()
+                                            val intent = Intent(this, MotoristaCardActivity::class.java)
+
+                                            // Verificar se já existe uma reserva para este motorista
+                                            firestore.collection("reservas")
+                                                .document(it.uid)  // Usando o UID do Firebase Auth
+                                                .get()
+                                                .addOnSuccessListener { document ->
+                                                    if (document.exists()) {
+                                                        // Redireciona para a tela de visualização do card de reserva
+                                                        startActivity(intent)
+                                                        finish()
+                                                    } else {
+                                                        // Caso não tenha reserva, redireciona para a tela de criação de reserva
+                                                        val intent = Intent(this, MotoristaActivity::class.java)
+                                                        startActivity(intent)
+                                                        finish()
+                                                    }
+                                                }
+
                                         } else {
                                             Toast.makeText(this, "Tipo de usuário desconhecido!", Toast.LENGTH_SHORT).show()
                                         }

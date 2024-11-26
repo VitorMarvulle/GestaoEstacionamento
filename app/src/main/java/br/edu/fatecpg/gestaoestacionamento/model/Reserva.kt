@@ -3,6 +3,7 @@ package br.edu.fatecpg.gestaoestacionamento.model
 import com.google.firebase.Timestamp
 
 data class Reserva(
+    var id: String = "", // Adicionando o campo id
     val nome: String = "",
     val telefone: String = "",
     val data: String = "",

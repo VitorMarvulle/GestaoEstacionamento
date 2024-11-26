@@ -3,22 +3,21 @@ package br.edu.fatecpg.gestaoestacionamento.view
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.fatecpg.gestaoestacionamento.MainActivity
 import br.edu.fatecpg.gestaoestacionamento.R
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.Timestamp
+import java.text.SimpleDateFormat
 import java.util.*
 
 class MotoristaActivity : AppCompatActivity() {
 
-    private lateinit var edtNome: EditText
-    private lateinit var edtTel: EditText
-    private lateinit var edtData: EditText
     private lateinit var edtPlaca: EditText
     private lateinit var edtCidade: EditText
     private lateinit var edtEstado: EditText
@@ -38,9 +37,6 @@ class MotoristaActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         // Inicializa os componentes da UI
-        edtNome = findViewById(R.id.edtNome)
-        edtTel = findViewById(R.id.edtTel)
-        edtData = findViewById(R.id.edtData)
         edtPlaca = findViewById(R.id.edtPlacaVeiculo)
         edtCidade = findViewById(R.id.edtCidade)
         edtEstado = findViewById(R.id.edtEstado)
@@ -52,9 +48,6 @@ class MotoristaActivity : AppCompatActivity() {
         // Clique no botão "Criar Agendamento"
         btnCriarAgendamento.setOnClickListener {
             // Recupera os dados dos campos
-            val nomePaciente = edtNome.text.toString()
-            val telefonePaciente = edtTel.text.toString()
-            val dataAgendamento = edtData.text.toString()
             val placaVeiculo = edtPlaca.text.toString()
             val cidade = edtCidade.text.toString()
             val estado = edtEstado.text.toString()
@@ -62,47 +55,76 @@ class MotoristaActivity : AppCompatActivity() {
             val rua = edtRua.text.toString()
 
             // Verifica se todos os campos estão preenchidos
-            if (TextUtils.isEmpty(nomePaciente) || TextUtils.isEmpty(telefonePaciente) ||
-                TextUtils.isEmpty(dataAgendamento) || TextUtils.isEmpty(placaVeiculo) ||
+            if (
+                TextUtils.isEmpty(placaVeiculo) ||
                 TextUtils.isEmpty(cidade) || TextUtils.isEmpty(estado) ||
                 TextUtils.isEmpty(numero) || TextUtils.isEmpty(rua)) {
                 Toast.makeText(this, "Por favor, preencha todos os campos!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Cria o map de dados para salvar no Firestore
-            val reserva = hashMapOf(
-                "nome" to nomePaciente,
-                "telefone" to telefonePaciente,
-                "data" to dataAgendamento,
-                "placa" to placaVeiculo,
-                "endereco" to mapOf(
-                    "cidade" to cidade,
-                    "estado" to estado,
-                    "numero" to numero,
-                    "rua" to rua
-                ),
-                "timestamp" to Timestamp(Date()) // Adiciona o timestamp do agendamento
-            )
+            // Recupera o uid do usuário autenticado
+            val user = auth.currentUser
+            user?.let {
+                val uid = it.uid
 
-            // Salva os dados na coleção "reservas" no Firestore
-            firestore.collection("reservas")
-                .add(reserva)
-                .addOnSuccessListener {
-                    Toast.makeText(this, "Reserva criada com sucesso!", Toast.LENGTH_SHORT).show()
-                    // Limpar os campos após o agendamento
-                    edtNome.text.clear()
-                    edtTel.text.clear()
-                    edtData.text.clear()
-                    edtPlaca.text.clear()
-                    edtCidade.text.clear()
-                    edtEstado.text.clear()
-                    edtNumero.text.clear()
-                    edtRua.text.clear()
-                }
-                .addOnFailureListener { e ->
-                    Toast.makeText(this, "Erro ao reservar a vaga: ${e.message}", Toast.LENGTH_SHORT).show()
-                }
+                // Recupera o nome do usuário do Firestore
+                firestore.collection("users").document(uid).get()
+                    .addOnSuccessListener { document ->
+                        if (document.exists()) {
+                            val nomeUsuario = document.getString("nome")
+                            Log.d("MotoristaActivity", "Nome do usuário do Firestore: $nomeUsuario")
+
+                            // Verifica se o nome do usuário é vazio ou null
+                            val nomeFinal = nomeUsuario?.takeIf { it.isNotBlank() } ?: "Usuário Anônimo"
+                            Log.d("MotoristaActivity", "Nome final que será salvo: $nomeFinal") // Log do nome final
+
+                            val timestamp = Timestamp(Date()) // Marca a data e hora da reserva
+
+                            // Formatar a data para o formato dd/MM/yy
+                            val simpleDateFormat = SimpleDateFormat("dd/MM/yy", Locale.getDefault())
+                            val formattedDate = simpleDateFormat.format(timestamp.toDate()) // Converte para Date e formata
+
+                            Log.d("MotoristaActivity", "Data formatada: $formattedDate") // Verifica a data formatada
+
+                            // Cria o map de dados para salvar no Firestore
+                            val reserva = hashMapOf(
+                                "nome" to nomeFinal,  // Usa o nome do usuário, ou "Usuário Anônimo" caso seja nulo ou vazio
+                                "placa" to placaVeiculo,
+                                "data" to formattedDate,  // Adiciona a data formatada
+                                "endereco" to mapOf(
+                                    "cidade" to cidade,
+                                    "estado" to estado,
+                                    "numero" to numero,
+                                    "rua" to rua
+                                ),
+                                "timestamp" to timestamp // Adiciona o timestamp do agendamento
+                            )
+
+                            // Salva a reserva associada ao UID do usuário como o ID do documento
+                            firestore.collection("reservas")
+                                .document(uid)  // Usando o UID como o ID do documento
+                                .set(reserva)
+                                .addOnSuccessListener {
+                                    Toast.makeText(this, "Reserva criada com sucesso!", Toast.LENGTH_SHORT).show()
+                                    // Limpar os campos após o agendamento
+                                    edtPlaca.text.clear()
+                                    edtCidade.text.clear()
+                                    edtEstado.text.clear()
+                                    edtNumero.text.clear()
+                                    edtRua.text.clear()
+                                }
+                                .addOnFailureListener { e ->
+                                    Toast.makeText(this, "Erro ao reservar a vaga: ${e.message}", Toast.LENGTH_SHORT).show()
+                                }
+                        } else {
+                            Log.d("MotoristaActivity", "Usuário não encontrado no Firestore")
+                        }
+                    }
+                    .addOnFailureListener { e ->
+                        Log.e("MotoristaActivity", "Erro ao recuperar dados do Firestore: ${e.message}")
+                    }
+            }
         }
 
         // Lógica do botão "Sair"
