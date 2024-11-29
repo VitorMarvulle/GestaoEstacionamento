@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="titulo">#DC8712</color>
     <color name="purple">#8692f7</color>
+    <color name="pressed_color">#5A6EEF</color>
+    <color name="pressed_border_color">#0919A2</color>
+
 </resources>

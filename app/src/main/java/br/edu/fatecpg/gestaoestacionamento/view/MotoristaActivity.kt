@@ -6,6 +6,9 @@ import android.text.TextUtils
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.fatecpg.gestaoestacionamento.MainActivity
@@ -23,6 +26,7 @@ class MotoristaActivity : AppCompatActivity() {
     private lateinit var edtEstado: EditText
     private lateinit var edtNumero: EditText
     private lateinit var edtRua: EditText
+    private lateinit var radioGroupDuracao: RadioGroup
     private lateinit var btnCriarAgendamento: Button
     private lateinit var btnSair: Button
     private lateinit var auth: FirebaseAuth
@@ -42,6 +46,7 @@ class MotoristaActivity : AppCompatActivity() {
         edtEstado = findViewById(R.id.edtEstado)
         edtNumero = findViewById(R.id.edtNumero)
         edtRua = findViewById(R.id.edtRua)
+        radioGroupDuracao = findViewById(R.id.radioGroupDuracao)
         btnCriarAgendamento = findViewById(R.id.btnCadastro)
         btnSair = findViewById(R.id.btnSair)
 
@@ -55,12 +60,27 @@ class MotoristaActivity : AppCompatActivity() {
             val rua = edtRua.text.toString()
 
             // Verifica se todos os campos estão preenchidos
-            if (
-                TextUtils.isEmpty(placaVeiculo) ||
-                TextUtils.isEmpty(cidade) || TextUtils.isEmpty(estado) ||
+            if (TextUtils.isEmpty(placaVeiculo) || TextUtils.isEmpty(cidade) || TextUtils.isEmpty(estado) ||
                 TextUtils.isEmpty(numero) || TextUtils.isEmpty(rua)) {
                 Toast.makeText(this, "Por favor, preencha todos os campos!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
+            }
+
+            // Recupera a opção selecionada no RadioGroup
+            val selectedRadioButtonId = radioGroupDuracao.checkedRadioButtonId
+            val selectedRadioButton: RadioButton = findViewById(selectedRadioButtonId)
+
+            val duracaoSelecionada = selectedRadioButton.text.toString()
+
+            // Determina o preço baseado na duração
+            val preco = when (duracaoSelecionada) {
+                "30 Minutos" -> "R$ 5,00"
+                "01 Hora" -> "R$ 10,00"
+                "02 Horas" -> "R$ 15,00"
+                else -> {
+                    Toast.makeText(this, "Selecione um tempo mínimo!", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
             }
 
             // Recupera o uid do usuário autenticado
@@ -91,6 +111,8 @@ class MotoristaActivity : AppCompatActivity() {
                             val reserva = hashMapOf(
                                 "nome" to nomeFinal,  // Usa o nome do usuário, ou "Usuário Anônimo" caso seja nulo ou vazio
                                 "placa" to placaVeiculo,
+                                "tempo" to duracaoSelecionada,  // Adiciona a duração selecionada
+                                "preco" to preco,  // Adiciona o preço
                                 "data" to formattedDate,  // Adiciona a data formatada
                                 "endereco" to mapOf(
                                     "cidade" to cidade,
@@ -113,6 +135,9 @@ class MotoristaActivity : AppCompatActivity() {
                                     edtEstado.text.clear()
                                     edtNumero.text.clear()
                                     edtRua.text.clear()
+                                    val intent = Intent(this, MotoristaCardActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
                                 }
                                 .addOnFailureListener { e ->
                                     Toast.makeText(this, "Erro ao reservar a vaga: ${e.message}", Toast.LENGTH_SHORT).show()

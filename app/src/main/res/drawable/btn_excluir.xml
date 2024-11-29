@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Estado pressionado -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/pressed_color" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/pressed_border_color" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+
+    <!-- Estado normal -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/titulo" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/titulo" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+</selector>
