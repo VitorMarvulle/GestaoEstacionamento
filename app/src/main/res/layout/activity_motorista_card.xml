@@ -34,8 +34,9 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <!-- Campos Nome, Data, Placa, Tempo e Preço -->
             <TextView
-                android:id="@+id/txtReserva"
+                android:id="@+id/txtTimer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
@@ -44,7 +45,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <!-- Campos Nome, Data, Placa, Tempo e Preço -->
             <TextView
                 android:id="@+id/txtNome"
                 android:layout_width="match_parent"

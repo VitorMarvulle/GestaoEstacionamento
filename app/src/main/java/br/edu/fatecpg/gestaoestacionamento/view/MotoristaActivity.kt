@@ -83,6 +83,15 @@ class MotoristaActivity : AppCompatActivity() {
                 }
             }
 
+            val duracaoMinutos = when (duracaoSelecionada){
+                "30 Minutos" -> 30
+                "01 Hora" -> 60
+                "02 Horas" -> 120
+                else -> {
+                    return@setOnClickListener
+                }
+            }
+
             // Recupera o uid do usuário autenticado
             val user = auth.currentUser
             user?.let {
@@ -114,6 +123,8 @@ class MotoristaActivity : AppCompatActivity() {
                                 "tempo" to duracaoSelecionada,  // Adiciona a duração selecionada
                                 "preco" to preco,  // Adiciona o preço
                                 "data" to formattedDate,  // Adiciona a data formatada
+                                "inicioTimestamp" to System.currentTimeMillis(), // Timestamp atual
+                                "duracaoMinutos" to duracaoMinutos,
                                 "endereco" to mapOf(
                                     "cidade" to cidade,
                                     "estado" to estado,

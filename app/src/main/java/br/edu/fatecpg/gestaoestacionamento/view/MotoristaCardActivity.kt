@@ -2,6 +2,7 @@ package br.edu.fatecpg.gestaoestacionamento.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -32,23 +33,23 @@ class MotoristaCardActivity : AppCompatActivity() {
         val txtPlaca: TextView = findViewById(R.id.txtPlaca)
         val txtPreco: TextView = findViewById(R.id.txtPreco)
         val txtTempo: TextView = findViewById(R.id.txtTempo)
-        val txtSaudacao: TextView = findViewById(R.id.txtSaudacao) // Adiciona a TextView da saudação
+        val txtSaudacao: TextView = findViewById(R.id.txtSaudacao)
+        val txtTimer: TextView = findViewById(R.id.txtTimer) // Adicionado o txtTimer
         val btnExcluir: Button = findViewById(R.id.btnExcluir) // Botão para excluir a reserva
 
         val user = auth.currentUser
         user?.let {
             val uid = it.uid
 
+            // Busca o nome do usuário para exibir na saudação
             firestore.collection("users").document(uid).get()
                 .addOnSuccessListener { document ->
                     if (document.exists()) {
                         val nomeUsuario = document.getString("nome")
-
-
-                        // Configura a saudação
                         txtSaudacao.text = "Olá, $nomeUsuario"
                     }
                 }
+
             // Verificar se o motorista tem uma reserva associada ao seu UID
             firestore.collection("reservas")
                 .document(uid)
@@ -65,8 +66,10 @@ class MotoristaCardActivity : AppCompatActivity() {
                         val rua = endereco["rua"] ?: "Rua não disponível"
                         val numero = endereco["numero"] ?: "Número não disponível"
                         val data = reserva?.get("data") as? String ?: "Data não disponível"
-                        val preco = reserva?.get("preco") as? String ?: "Preço não disponível" // Valor padrão se preço for null
-                        val tempo = reserva?.get("tempo") as? String ?: "Tipo de reserva não disponível" // Valor padrão se tipoReserva for null
+                        val preco = reserva?.get("preco") as? String ?: "Preço não disponível"
+                        val tempo = reserva?.get("tempo") as? String ?: "Tipo de reserva não disponível"
+                        val inicioTimestamp = reserva?.get("inicioTimestamp") as? Long ?: 0L
+                        val duracaoMinutos = reserva?.get("duracaoMinutos") as? Long ?: 0L
 
                         // Atribui os dados nas TextViews correspondentes
                         txtNome.text = "Nome: $nome"
@@ -76,21 +79,29 @@ class MotoristaCardActivity : AppCompatActivity() {
                         txtCidade.text = "Cidade: $cidade"
                         txtEstado.text = "Estado: $estado"
                         txtData.text = "Data: $data"
-                        txtPreco.text = "Preço: $preco"  // Exibindo o preço
+                        txtPreco.text = "Preço: $preco"
                         txtTempo.text = "Tipo de Reserva: $tempo"
+
+                        // Configura o timer
+                        val tempoRestanteMillis = (inicioTimestamp + (duracaoMinutos * 60 * 1000)) - System.currentTimeMillis()
+                        if (tempoRestanteMillis > 0) {
+                            iniciarTimer(tempoRestanteMillis, txtTimer)
+                        } else {
+                            txtTimer.text = "Tempo esgotado!"
+                        }
                     }
                 }
                 .addOnFailureListener { e ->
                     Toast.makeText(this, "Erro ao buscar reserva: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
 
+            // Botão para excluir a reserva
             btnExcluir.setOnClickListener {
                 firestore.collection("reservas")
                     .document(uid)
                     .delete()
                     .addOnSuccessListener {
                         Toast.makeText(this, "Reserva excluída com sucesso!", Toast.LENGTH_SHORT).show()
-                        // Redireciona o usuário para a tela de criação de reserva
                         val intent = Intent(this, MotoristaActivity::class.java)
                         startActivity(intent)
                         finish()
@@ -99,10 +110,30 @@ class MotoristaCardActivity : AppCompatActivity() {
                         Toast.makeText(this, "Erro ao excluir a reserva: ${e.message}", Toast.LENGTH_SHORT).show()
                     }
             }
-
         }
     }
 
+    // Método para iniciar o timer
+    private fun iniciarTimer(tempoRestanteMillis: Long, txtTimer: TextView) {
+        val timer = object : CountDownTimer(tempoRestanteMillis, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                val horas = millisUntilFinished / (1000 * 60 * 60) // Calcula as horas
+                val minutos = (millisUntilFinished / (1000 * 60)) % 60 // Calcula os minutos restantes
+                val segundos = (millisUntilFinished / 1000) % 60 // Calcula os segundos restantes
 
+                // Formata para exibir horas, minutos e segundos
+                if (horas > 0) {
+                    txtTimer.text = String.format("%02d:%02d:%02d", horas, minutos, segundos)
+                } else {
+                    txtTimer.text = String.format("%02d:%02d", minutos, segundos)
+                }
+            }
+
+            override fun onFinish() {
+                txtTimer.text = "Tempo esgotado!"
+            }
+        }
+        timer.start()
+    }
 
 }
