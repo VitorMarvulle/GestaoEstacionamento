@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bg2"
     android:gravity="center"
     tools:context=".MainActivity">
 
@@ -31,7 +32,7 @@
                 android:fontFamily="casual"
                 android:text="Faça seu Login"
                 android:textAlignment="center"
-                android:textColor="@color/purple"
+                android:textColor="@color/titulo"
                 android:textSize="36sp"
                 android:textStyle="bold" />
 
@@ -63,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="@color/purple"
+                android:backgroundTint="@color/titulo"
                 android:text="Login"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
@@ -71,11 +72,13 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+
     <TextView
         android:id="@+id/txt_cadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Não possui conta? Cadastre-se" />
+        android:text="Não possui conta? Cadastre-se"
+        android:textColor="@android:color/white" />
 
 
     <TextView
@@ -84,7 +87,7 @@
         android:layout_height="wrap_content"
         android:text="Esqueci a senha"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/purple"
-        android:textColor="@android:color/black" />
+        android:backgroundTint="@color/titulo"
+        android:textColor="@android:color/white" />
 
 </LinearLayout>
