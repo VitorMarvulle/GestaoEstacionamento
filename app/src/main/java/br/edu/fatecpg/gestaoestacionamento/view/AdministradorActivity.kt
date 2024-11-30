@@ -1,11 +1,14 @@
 package br.edu.fatecpg.gestaoestacionamento.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.edu.fatecpg.gestaoestacionamento.MainActivity
 import br.edu.fatecpg.gestaoestacionamento.R
 import br.edu.fatecpg.gestaoestacionamento.adapter.ReservaAdapter
 import br.edu.fatecpg.gestaoestacionamento.model.Reserva
@@ -17,6 +20,8 @@ class AdministradorActivity : AppCompatActivity() {
 
     private lateinit var firestore: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
+    private lateinit var btnSair: Button
+
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var reservaAdapter: ReservaAdapter
@@ -39,6 +44,19 @@ class AdministradorActivity : AppCompatActivity() {
         recyclerView.adapter = reservaAdapter
 
         loadReservas()
+
+        btnSair = findViewById(R.id.btnSair)
+        // Lógica do botão "Sair"
+        btnSair.setOnClickListener {
+            // Realiza o logout do Firebase
+            auth.signOut()
+
+            // Redireciona para a MainActivity
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
     }
 
     private fun loadReservas() {
@@ -80,4 +98,7 @@ class AdministradorActivity : AppCompatActivity() {
                 Toast.makeText(this, "Erro ao excluir: ${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
+
+
 }

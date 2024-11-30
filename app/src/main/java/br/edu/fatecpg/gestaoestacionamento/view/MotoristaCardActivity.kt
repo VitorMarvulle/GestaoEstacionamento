@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import br.edu.fatecpg.gestaoestacionamento.MainActivity
 import br.edu.fatecpg.gestaoestacionamento.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -36,6 +37,7 @@ class MotoristaCardActivity : AppCompatActivity() {
         val txtSaudacao: TextView = findViewById(R.id.txtSaudacao)
         val txtTimer: TextView = findViewById(R.id.txtTimer) // Adicionado o txtTimer
         val btnExcluir: Button = findViewById(R.id.btnExcluir) // Botão para excluir a reserva
+        val btnSair: Button = findViewById(R.id.btnSair)
 
         val user = auth.currentUser
         user?.let {
@@ -110,6 +112,18 @@ class MotoristaCardActivity : AppCompatActivity() {
                         Toast.makeText(this, "Erro ao excluir a reserva: ${e.message}", Toast.LENGTH_SHORT).show()
                     }
             }
+
+            // Lógica do botão "Sair"
+            btnSair.setOnClickListener {
+                // Realiza o logout do Firebase
+                auth.signOut()
+
+                // Redireciona para a MainActivity
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+
         }
     }
 

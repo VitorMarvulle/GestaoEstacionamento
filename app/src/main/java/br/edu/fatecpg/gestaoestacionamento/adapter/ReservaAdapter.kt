@@ -29,7 +29,7 @@ class ReservaAdapter(
         val txtNumero: TextView = itemView.findViewById(R.id.txtNumero)
         val txtCidade: TextView = itemView.findViewById(R.id.txtCidade)
         val txtEstado: TextView = itemView.findViewById(R.id.txtEstado)
-        val btnExcluir: Button = itemView.findViewById(R.id.btnExcluir) // Botão de excluir
+        val btnExcluir: Button = itemView.findViewById(R.id.btnExcluir)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReservaViewHolder {
@@ -63,6 +63,7 @@ class ReservaAdapter(
         holder.btnExcluir.setOnClickListener {
             onDeleteClickListener(reserva.id)
         }
+
 
         // Configura o timer
         val inicioTimestamp = reserva.inicioTimestamp

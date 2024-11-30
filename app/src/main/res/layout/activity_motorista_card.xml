@@ -12,7 +12,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="432dp"
+        android:layout_height="504dp"
         android:layout_margin="4dp"
         android:orientation="vertical"
         android:padding="12dp">
@@ -103,8 +103,8 @@
                 android:id="@+id/txtEndereco"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="12dp"
                 android:text="Local"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -146,7 +146,7 @@
 
         <Button
             android:id="@+id/btnExcluir"
-            android:layout_width="wrap_content"
+            android:layout_width="146dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
@@ -154,5 +154,17 @@
             android:text="Excluir"
             android:textColor="@android:color/white" />
 
+        <Button
+            android:id="@+id/btnSair"
+            android:layout_width="153dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_excluir"
+            android:text="Sair"
+            android:textColor="@android:color/white" />
+
     </LinearLayout>
+
+
 </androidx.cardview.widget.CardView>
