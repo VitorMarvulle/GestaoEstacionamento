@@ -134,7 +134,7 @@
                     android:id="@+id/radio30Min"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tempo: 30 Minutos"
+                    android:text="30 Minutos"
                     android:textStyle="bold" />
 
                 <TextView
@@ -152,7 +152,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="Tempo: 01 Hora"
+                    android:text="01 Hora"
                     android:textStyle="bold" />
 
                 <TextView
@@ -171,7 +171,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="Tempo: 02 Horas"
+                    android:text="02 Horas"
                     android:textStyle="bold" />
 
                 <TextView
