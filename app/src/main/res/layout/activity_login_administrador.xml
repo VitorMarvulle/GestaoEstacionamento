@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg2"
+    android:background="@color/blue1"
     android:padding="16dp">
 
     <TextView
@@ -23,7 +23,7 @@
         android:layout_height="35dp"
         android:fontFamily="casual"
         android:text="Olá, administrador."
-        android:textColor="@color/titulo"
+        android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="bold" />
 

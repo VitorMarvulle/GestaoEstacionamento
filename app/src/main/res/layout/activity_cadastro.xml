@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/bg2"
+    android:background="@color/blue1"
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="685dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/custom_edittext"
+            android:background="@drawable/custom_edittext2"
             android:orientation="vertical"
             android:padding="24dp">
 
@@ -32,7 +32,7 @@
                 android:fontFamily="casual"
                 android:text="Cadastre-se"
                 android:textAlignment="center"
-                android:textColor="@color/titulo"
+                android:textColor="@color/blue1"
                 android:textSize="42sp"
                 android:textStyle="bold" />
 
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30sp"
                 android:fontFamily="serif"
-                android:text="Preencha os campos a seguir!"
+                android:text="Preencha os campos a seguir:"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -83,14 +83,14 @@
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="match_parent"
+                android:layout_width="313dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:fontFamily="serif"
-                android:text="Selecione seu tipo de Usuário"
+                android:text="Selecione o seu tipo de Usuário:"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="19sp"
                 android:textStyle="bold" />
 
             <RadioGroup
@@ -122,7 +122,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="@color/titulo"
+                android:backgroundTint="@color/blue1"
                 android:text="Criar Conta"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />

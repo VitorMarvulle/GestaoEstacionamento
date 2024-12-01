@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
+    android:background="@drawable/custom_edittext3"
+    app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="40dp"
     app:cardElevation="8dp"
-    app:cardUseCompatPadding="true"
-    app:cardBackgroundColor="@color/card_bg"> <!-- Cor de fundo do CardView -->
+    app:cardUseCompatPadding="true"> <!-- Cor de fundo do CardView -->
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -152,7 +153,8 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/btn_excluir"
             android:text="Excluir"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textColorLink="@color/red1" />
 
         <Button
             android:id="@+id/btnSair"
@@ -162,7 +164,8 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/btn_excluir"
             android:text="Sair"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textColorLink="@color/red1" />
 
     </LinearLayout>
 

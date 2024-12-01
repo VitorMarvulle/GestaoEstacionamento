@@ -4,9 +4,14 @@
     <color name="white">#FFFFFFFF</color>
     <color name="titulo">#4269ED</color>
     <color name="purple">#8692f7</color>
+
+    <color name="red1">#C42026</color>
+    <color name="purple2">#827CD1</color>
+    <color name="blue1">#003f70</color>
+
     <color name="pressed_color">#5A6EEF</color>
     <color name="pressed_border_color">#0919A2</color>
-    <color name="card_bg">#BEC8FA</color>
+    <color name="card_bg">#FFFFFFFF</color>
 
 
 </resources>

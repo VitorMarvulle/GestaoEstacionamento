@@ -6,20 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg2"
+    android:background="@color/blue1"
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textViewAPP"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="ESTACIONE FÁCIL PG"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="360dp"
+        android:layout_height="165dp"
+        app:srcCompat="@drawable/logo_car_parking_4_no_backgroud" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -32,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="426dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/custom_edittext"
+            android:background="@color/white"
             android:orientation="vertical"
             android:padding="24dp">
 
@@ -43,7 +39,7 @@
                 android:fontFamily="casual"
                 android:text="Faça seu Login"
                 android:textAlignment="center"
-                android:textColor="@color/titulo"
+                android:textColor="@color/blue1"
                 android:textSize="36sp"
                 android:textStyle="bold" />
 
@@ -87,8 +83,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="@color/titulo"
+                android:backgroundTint="@color/blue1"
                 android:text="Login"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
 
@@ -106,8 +103,8 @@
 
     <TextView
         android:id="@+id/btnRedefinirSenha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="119dp"
+        android:layout_height="39dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/titulo"
         android:text="Esqueci a senha"

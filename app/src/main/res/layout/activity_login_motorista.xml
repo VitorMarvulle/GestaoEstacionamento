@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
+    android:background="@color/blue1"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -18,9 +18,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="873dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/custom_edittext"
+            android:background="@drawable/custom_edittext2"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -28,11 +28,11 @@
                 android:id="@+id/loginText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="casual"
                 android:text="Reservar sua Vaga"
                 android:textAlignment="center"
-                android:textColor="@color/titulo"
+                android:textColor="@color/blue1"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="serif"
-                android:text="Preencha os Dados do Veículo "
+                android:text="Preencha os Dados do Veículo:"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -110,7 +110,7 @@
                 android:id="@+id/radioGroupDuracao"
                 android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical">
 
                 <!-- 30 Minutos  -->
@@ -124,7 +124,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="42dp"
                     android:fontFamily="serif"
-                    android:text="Tempo de Duração da Vaga"
+                    android:text="Tempo de Duração da Vaga:"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -191,9 +191,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/titulo"
+                android:backgroundTint="@color/blue1"
                 android:text="Criar Reserva"
-                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
                 app:cornerRadius="15dp" />
 
             <ProgressBar
@@ -206,11 +207,12 @@
             <Button
                 android:id="@+id/btnSair"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:backgroundTint="@color/purple"
+                android:backgroundTint="@color/red1"
                 android:text="Sair"
-                android:textSize="14sp" />
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
 
             <!-- Oculto inicialmente -->
