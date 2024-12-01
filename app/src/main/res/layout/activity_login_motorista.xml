@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:background="@drawable/bg2"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
@@ -19,7 +18,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="873dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/custom_edittext"
             android:orientation="vertical"
@@ -29,11 +28,23 @@
                 android:id="@+id/loginText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="casual"
-                android:text="Reservar vaga"
+                android:text="Reservar sua Vaga"
                 android:textAlignment="center"
                 android:textColor="@color/titulo"
-                android:textSize="24sp"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Preencha os Dados do Veículo "
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -92,30 +103,47 @@
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
-            <!-- Novo RadioGroup -->
+
+            <!-- Novo RadioGroup Preencha os Dados do Veículo -->
 
             <RadioGroup
                 android:id="@+id/radioGroupDuracao"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_width="334dp"
+                android:layout_height="312dp"
+                android:layout_marginTop="40dp"
                 android:orientation="vertical">
 
-                <!-- 30 Minutos -->
+                <!-- 30 Minutos  -->
+
+                <!-- 01 Hora -->
+
+                <!-- Tempo de Duração da Vaga -->
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:fontFamily="serif"
+                    android:text="Tempo de Duração da Vaga"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
                 <RadioButton
                     android:id="@+id/radio30Min"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="30 Minutos" />
+                    android:text="Tempo: 30 Minutos"
+                    android:textStyle="bold" />
 
-                <!-- 01 Hora -->
                 <TextView
                     android:id="@+id/preco30Min"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="32dp"
                     android:gravity="center_vertical"
-                    android:text="R$ 5,00"
+                    android:text="Valor: R$ 5,00"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -123,15 +151,17 @@
                     android:id="@+id/radio1Hora"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="01 Hora" />
+                    android:layout_marginTop="20dp"
+                    android:text="Tempo: 01 Hora"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/preco1Hora"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="32dp"
                     android:gravity="center_vertical"
-                    android:text="R$ 10,00"
+                    android:text="Valor: R$ 10,00"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -140,15 +170,17 @@
                     android:id="@+id/radio2Horas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="02 Horas" />
+                    android:layout_marginTop="20dp"
+                    android:text="Tempo: 02 Horas"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/preco2Horas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="32dp"
                     android:gravity="center_vertical"
-                    android:text="R$ 15,00"
+                    android:text="Valor: R$ 15,00"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
@@ -164,6 +196,13 @@
                 android:textSize="16sp"
                 app:cornerRadius="15dp" />
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
             <Button
                 android:id="@+id/btnSair"
                 android:layout_width="match_parent"
@@ -173,12 +212,8 @@
                 android:text="Sair"
                 android:textSize="14sp" />
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:visibility="gone" /> <!-- Oculto inicialmente -->
+
+            <!-- Oculto inicialmente -->
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

@@ -48,11 +48,11 @@ class ReservaAdapter(
         // Configura os campos de texto com os dados da reserva
         holder.txtSaudacao.text = "Usuário: ${reserva.email}"
         holder.txtTimer.text = "Sua reserva:"
-        holder.txtNome.text = reserva.nome
+        holder.txtNome.text = "${reserva.nome}"
         holder.txtData.text = "Data: ${reserva.data}"
         holder.txtPlaca.text = "Placa: ${reserva.placa}"
         holder.txtTempo.text = "Tempo: ${reserva.tempo}"
-        holder.txtPreco.text = "Preço: R$ ${reserva.preco}"
+        holder.txtPreco.text = "Preço: ${reserva.preco}"
         holder.txtEndereco.text = "Endereço:"
         holder.txtRua.text = "Rua: ${reserva.rua}"
         holder.txtNumero.text = "Número: ${reserva.numero}"

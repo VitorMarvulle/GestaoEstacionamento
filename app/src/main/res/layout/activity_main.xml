@@ -10,6 +10,17 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textViewAPP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="ESTACIONE FÁCIL PG"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +30,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="376dp"
+            android:layout_height="426dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/custom_edittext"
             android:orientation="vertical"
@@ -34,6 +45,18 @@
                 android:textAlignment="center"
                 android:textColor="@color/titulo"
                 android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25sp"
+                android:fontFamily="serif"
+                android:text="Preencha seus dados nos campos abaixo!"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -85,9 +108,9 @@
         android:id="@+id/btnRedefinirSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Esqueci a senha"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/titulo"
+        android:text="Esqueci a senha"
         android:textColor="@android:color/white" />
 
 </LinearLayout>
