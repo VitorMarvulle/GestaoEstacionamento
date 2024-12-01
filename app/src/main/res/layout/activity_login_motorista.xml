@@ -104,7 +104,7 @@
                 android:textSize="14sp" />
 
 
-            <!-- Novo RadioGroup Preencha os Dados do Veículo -->
+            <!-- Novo RadioGroup -->
 
             <RadioGroup
                 android:id="@+id/radioGroupDuracao"
