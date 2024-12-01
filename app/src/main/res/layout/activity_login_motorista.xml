@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/custom_edittext2"
+            android:background="@color/white"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -56,6 +56,7 @@
                 android:hint="Placa do veículo"
                 android:padding="8dp"
                 android:textColor="@color/black"
+                android:textColorLink="@color/black"
                 android:textSize="14sp" />
 
             <EditText
@@ -67,6 +68,7 @@
                 android:hint="Cidade"
                 android:padding="8dp"
                 android:textColor="@color/black"
+                android:textColorLink="@color/black"
                 android:textSize="14sp" />
 
             <EditText
@@ -78,6 +80,7 @@
                 android:hint="Estado"
                 android:padding="8dp"
                 android:textColor="@color/black"
+                android:textColorLink="@color/black"
                 android:textSize="14sp" />
 
             <EditText
@@ -89,6 +92,7 @@
                 android:hint="Rua"
                 android:padding="8dp"
                 android:textColor="@color/black"
+                android:textColorLink="@color/black"
                 android:textSize="14sp" />
 
             <EditText
@@ -101,6 +105,7 @@
                 android:inputType="number"
                 android:padding="8dp"
                 android:textColor="@color/black"
+                android:textColorLink="@color/black"
                 android:textSize="14sp" />
 
 
@@ -135,7 +140,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="30 Minutos"
-                    android:textStyle="bold" />
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/blue1"
+                    android:textStyle="bold"
+                    app:useMaterialThemeColors="true" />
 
                 <TextView
                     android:id="@+id/preco30Min"
@@ -153,6 +161,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="01 Hora"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/blue1"
                     android:textStyle="bold" />
 
                 <TextView
@@ -172,6 +182,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="02 Horas"
+                    android:textColor="@color/black"
+                    android:textColorLink="@color/blue1"
                     android:textStyle="bold" />
 
                 <TextView
