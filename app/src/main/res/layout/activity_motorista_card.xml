@@ -177,10 +177,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/btn_excluir"
+                android:backgroundTint="@color/red1"
                 android:text="Excluir"
-                android:textColor="@android:color/white"
-                android:textColorLink="@color/red1" />
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnSair"
@@ -188,10 +187,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/btn_excluir"
+                android:backgroundTint="@color/red1"
                 android:text="Sair"
-                android:textColor="@android:color/white"
-                android:textColorLink="@color/red1" />
+                android:textColor="@android:color/white" />
 
         </LinearLayout>
 
