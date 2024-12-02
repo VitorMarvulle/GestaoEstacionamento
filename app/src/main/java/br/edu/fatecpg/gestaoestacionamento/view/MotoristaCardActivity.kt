@@ -104,7 +104,7 @@ class MotoristaCardActivity : AppCompatActivity() {
                     .delete()
                     .addOnSuccessListener {
                         Toast.makeText(this, "Reserva excluída com sucesso!", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, MotoristaActivity::class.java)
+                        val intent = Intent(this, MotoristaFormActivity::class.java)
                         startActivity(intent)
                         finish()
                     }

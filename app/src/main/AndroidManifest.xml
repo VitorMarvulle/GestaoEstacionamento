@@ -24,9 +24,15 @@
 
         <activity android:name=".view.CadastroActivity" />
 
-        <activity android:name=".view.AdministradorActivity" />
-        <activity android:name=".view.MotoristaActivity" />
+        <activity android:name=".view.AdminListaActivity" />
+        <activity android:name=".view.AdminBotoesActivity" />
+        <activity android:name=".view.AdminFormActivity" />
+
+        <activity android:name=".view.MotoristaListaActivity" />
+        <activity android:name=".view.MotoristaFormActivity" />
         <activity android:name=".view.MotoristaCardActivity" />
+        <activity android:name=".view.MotoristaBotoesActivity" />
+
 
     </application>
 

@@ -6,9 +6,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.fatecpg.gestaoestacionamento.databinding.ActivityMainBinding
 import br.edu.fatecpg.gestaoestacionamento.view.CadastroActivity
-import br.edu.fatecpg.gestaoestacionamento.view.AdministradorActivity
-import br.edu.fatecpg.gestaoestacionamento.view.MotoristaActivity
+import br.edu.fatecpg.gestaoestacionamento.view.AdminBotoesActivity
+import br.edu.fatecpg.gestaoestacionamento.view.MotoristaBotoesActivity
 import br.edu.fatecpg.gestaoestacionamento.view.MotoristaCardActivity
+import br.edu.fatecpg.gestaoestacionamento.view.MotoristaFormActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -54,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
                                         if (tipoUsuario == "Administrador") {
                                             // Redireciona para a tela do Médico
-                                            val intent = Intent(this, AdministradorActivity::class.java)
+                                            val intent = Intent(this, AdminBotoesActivity::class.java)
                                             intent.putExtra("nome", nome)
                                             startActivity(intent)
                                             finish()
@@ -73,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                                                         finish()
                                                     } else {
                                                         // Caso não tenha reserva, redireciona para a tela de criação de reserva
-                                                        val intent = Intent(this, MotoristaActivity::class.java)
+                                                        val intent = Intent(this, MotoristaBotoesActivity::class.java)
                                                         startActivity(intent)
                                                         finish()
                                                     }

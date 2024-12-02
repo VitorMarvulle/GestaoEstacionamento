@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
-class AdministradorActivity : AppCompatActivity() {
+class AdminListaActivity : AppCompatActivity() {
 
     private lateinit var firestore: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
@@ -73,7 +73,7 @@ class AdministradorActivity : AppCompatActivity() {
                         reserva.duracaoMinutos = (document.getLong("duracaoMinutos") ?: 0L).toInt()
                         reservasList.add(reserva)
                     } catch (e: Exception) {
-                        Log.e("AdministradorActivity", "Erro ao converter documento", e)
+                        Log.e("AdminListaActivity", "Erro ao converter documento", e)
                     }
                 }
                 reservaAdapter.notifyDataSetChanged()

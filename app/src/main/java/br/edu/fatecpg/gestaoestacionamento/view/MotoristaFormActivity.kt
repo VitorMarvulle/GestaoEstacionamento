@@ -8,7 +8,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.fatecpg.gestaoestacionamento.MainActivity
@@ -19,7 +18,7 @@ import com.google.firebase.Timestamp
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MotoristaActivity : AppCompatActivity() {
+class MotoristaFormActivity : AppCompatActivity() {
 
     private lateinit var edtPlaca: EditText
     private lateinit var edtCidade: EditText
@@ -102,11 +101,11 @@ class MotoristaActivity : AppCompatActivity() {
                     .addOnSuccessListener { document ->
                         if (document.exists()) {
                             val nomeUsuario = document.getString("nome")
-                            Log.d("MotoristaActivity", "Nome do usuário do Firestore: $nomeUsuario")
+                            Log.d("MotoristaFormActivity", "Nome do usuário do Firestore: $nomeUsuario")
 
                             // Verifica se o nome do usuário é vazio ou null
                             val nomeFinal = nomeUsuario?.takeIf { it.isNotBlank() } ?: "Usuário Anônimo"
-                            Log.d("MotoristaActivity", "Nome final que será salvo: $nomeFinal") // Log do nome final
+                            Log.d("MotoristaFormActivity", "Nome final que será salvo: $nomeFinal") // Log do nome final
 
                             val timestamp = Timestamp(Date()) // Marca a data e hora da reserva
 
@@ -114,7 +113,7 @@ class MotoristaActivity : AppCompatActivity() {
                             val simpleDateFormat = SimpleDateFormat("dd/MM/yy", Locale.getDefault())
                             val formattedDate = simpleDateFormat.format(timestamp.toDate()) // Converte para Date e formata
 
-                            Log.d("MotoristaActivity", "Data formatada: $formattedDate") // Verifica a data formatada
+                            Log.d("MotoristaFormActivity", "Data formatada: $formattedDate") // Verifica a data formatada
 
                             // Cria o map de dados para salvar no Firestore
                             val reserva = hashMapOf(
@@ -154,11 +153,11 @@ class MotoristaActivity : AppCompatActivity() {
                                     Toast.makeText(this, "Erro ao reservar a vaga: ${e.message}", Toast.LENGTH_SHORT).show()
                                 }
                         } else {
-                            Log.d("MotoristaActivity", "Usuário não encontrado no Firestore")
+                            Log.d("MotoristaFormActivity", "Usuário não encontrado no Firestore")
                         }
                     }
                     .addOnFailureListener { e ->
-                        Log.e("MotoristaActivity", "Erro ao recuperar dados do Firestore: ${e.message}")
+                        Log.e("MotoristaFormActivity", "Erro ao recuperar dados do Firestore: ${e.message}")
                     }
             }
         }

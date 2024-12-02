@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/blue1"
+    android:gravity="center" >
+
+
+    <TextView
+        android:id="@+id/txtSaudacao"
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="360dp"
+        android:layout_height="165dp"
+        app:srcCompat="@drawable/logo_car_parking_4_no_backgroud" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp"/>
+
+
+    <Button
+        android:id="@+id/btnCriar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Criar Reservas"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnConsultar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Vagas Disponíveis na sua Região"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+
+</LinearLayout>
