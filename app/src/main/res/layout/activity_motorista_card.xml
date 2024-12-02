@@ -11,175 +11,190 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-<androidx.cardview.widget.CardView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    android:background="@drawable/custom_edittext3"
-    app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="40dp"
-    app:cardElevation="8dp"
-    app:cardUseCompatPadding="true"> <!-- Cor de fundo do CardView -->
-
-
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="504dp"
-        android:layout_margin="4dp"
-        android:orientation="vertical"
-        android:padding="12dp">
+        android:layout_height="625dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/custom_edittext3"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"> <!-- Cor de fundo do CardView -->
 
-        <!-- Bloco de Dados da Reserva -->
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_edittext"
+            android:layout_height="575dp"
+            android:layout_margin="4dp"
             android:orientation="vertical"
             android:padding="12dp">
 
-            <TextView
-                android:id="@+id/txtSaudacao"
+            <!-- Bloco de Dados da Reserva -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:text="Olá, $nomeUsuario"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:background="@drawable/custom_edittext"
+                android:orientation="vertical"
+                android:padding="12dp">
 
-            <!-- Campos Nome, Data, Placa, Tempo e Preço -->
-            <TextView
-                android:id="@+id/txtTimer"
+                <TextView
+                    android:id="@+id/txtSaudacao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Olá, $nomeUsuario"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Campos Nome, Data, Placa, Tempo e Preço -->
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:text="TEMPO RESTANTE NA VAGA"
+                    android:textColor="@color/red1"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtTimer"
+                    android:layout_width="146dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Sua reserva:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Nome"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Data"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txtPlaca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Placa do Veículo"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txtTempo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tempo"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txtPreco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Preço"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Bloco de Endereço -->
+
+            <!-- Botão Excluir -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:text="Sua reserva:"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="16dp"
+                android:background="@drawable/custom_edittext"
+                android:orientation="vertical"
+                android:padding="12dp">
 
-            <TextView
-                android:id="@+id/txtNome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nome"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/txtEndereco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="12dp"
+                    android:text="Local"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/txtData"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Data"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                <!-- Campos Rua, Número, Cidade e Estado -->
+                <TextView
+                    android:id="@+id/txtRua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rua"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/txtPlaca"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Placa do Veículo"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/txtNumero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Número"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/txtTempo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tempo"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/txtCidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cidade"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/txtPreco"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Preço"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/txtEstado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Estado"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+            </LinearLayout>
 
-        <!-- Bloco de Endereço -->
-
-        <!-- Botão Excluir -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/custom_edittext"
-            android:orientation="vertical"
-            android:padding="12dp">
-
-            <TextView
-                android:id="@+id/txtEndereco"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/btnExcluir"
+                android:layout_width="146dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="12dp"
-                android:text="Local"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_excluir"
+                android:text="Excluir"
+                android:textColor="@android:color/white"
+                android:textColorLink="@color/red1" />
 
-            <!-- Campos Rua, Número, Cidade e Estado -->
-            <TextView
-                android:id="@+id/txtRua"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/btnSair"
+                android:layout_width="153dp"
                 android:layout_height="wrap_content"
-                android:text="Rua"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/btn_excluir"
+                android:text="Sair"
+                android:textColor="@android:color/white"
+                android:textColorLink="@color/red1" />
 
-            <TextView
-                android:id="@+id/txtNumero"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Número"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/txtCidade"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Cidade"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/txtEstado"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Estado"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btnExcluir"
-            android:layout_width="146dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/btn_excluir"
-            android:text="Excluir"
-            android:textColor="@android:color/white"
-            android:textColorLink="@color/red1" />
 
-        <Button
-            android:id="@+id/btnSair"
-            android:layout_width="153dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/btn_excluir"
-            android:text="Sair"
-            android:textColor="@android:color/white"
-            android:textColorLink="@color/red1" />
-
-    </LinearLayout>
-
-
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>
