@@ -28,7 +28,7 @@
         android:layout_width="224dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:text="Criar Reservas"
+        android:text="Criar Nova Vaga"
         android:textColor="@android:color/black"
         android:textSize="20sp" />
 
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Consultar Reservas"
+        android:text="Consultar Reservas de Clientes"
         android:textColor="@android:color/black"
         android:backgroundTint="@color/white"
         android:textSize="20sp" />

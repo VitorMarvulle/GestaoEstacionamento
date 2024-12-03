@@ -34,7 +34,6 @@ class MotoristaCardActivity : AppCompatActivity() {
         val txtPlaca: TextView = findViewById(R.id.txtPlaca)
         val txtPreco: TextView = findViewById(R.id.txtPreco)
         val txtTempo: TextView = findViewById(R.id.txtTempo)
-        val txtSaudacao: TextView = findViewById(R.id.txtSaudacao)
         val txtTimer: TextView = findViewById(R.id.txtTimer)
         val btnExcluir: Button = findViewById(R.id.btnExcluir)
         val btnSair: Button = findViewById(R.id.btnSair)

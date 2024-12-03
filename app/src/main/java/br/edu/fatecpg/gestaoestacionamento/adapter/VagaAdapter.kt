@@ -50,29 +50,29 @@ class VagaAdapter(
             txtStatus.text = "Status: ${vaga.status}"
 
             // Ação de clique para o botão de reservar
-            btnReservar.setOnClickListener {
-                val context = itemView.context
-
-                // Recuperar o nome do usuário logado
-                val user = FirebaseAuth.getInstance().currentUser
-                val nomeUsuario = user?.displayName ?: "Usuário não disponível"  // Caso não tenha nome disponível, usa o valor padrão.
-
-                // Recuperar a placa do veículo digitada pelo usuário
-                val placaVeiculo = edtPlacaVeiculo.text.toString()
-
-                // Passar os dados para a MotoristaCardActivity via Intent
-                val intent = Intent(context, MotoristaCardActivity::class.java)
-                intent.putExtra("cidade", vaga.cidade)
-                intent.putExtra("estado", vaga.estado)
-                intent.putExtra("rua", vaga.rua)
-                intent.putExtra("numero", vaga.numero.toString()) // Garantir que é uma String
-                intent.putExtra("status", vaga.status)
-                intent.putExtra("nomeUsuario", nomeUsuario)  // Enviando o nome do usuário
-                intent.putExtra("placaVeiculo", placaVeiculo)  // Enviando a placa do veículo
-
-                // Iniciar a MotoristaCardActivity
-                context.startActivity(intent)
-            }
+//            btnReservar.setOnClickListener {
+//                val context = itemView.context
+//
+//                // Recuperar o nome do usuário logado
+//                val user = FirebaseAuth.getInstance().currentUser
+//                val nomeUsuario = user?.displayName ?: "Usuário não disponível"  // Caso não tenha nome disponível, usa o valor padrão.
+//
+//                // Recuperar a placa do veículo digitada pelo usuário
+//                val placaVeiculo = edtPlacaVeiculo.text.toString()
+//
+//                // Passar os dados para a MotoristaCardActivity via Intent
+//                val intent = Intent(context, MotoristaCardActivity::class.java)
+//                intent.putExtra("cidade", vaga.cidade)
+//                intent.putExtra("estado", vaga.estado)
+//                intent.putExtra("rua", vaga.rua)
+//                intent.putExtra("numero", vaga.numero.toString()) // Garantir que é uma String
+//                intent.putExtra("status", vaga.status)
+//                intent.putExtra("nomeUsuario", nomeUsuario)  // Enviando o nome do usuário
+//                intent.putExtra("placaVeiculo", placaVeiculo)  // Enviando a placa do veículo
+//
+//                // Iniciar a MotoristaCardActivity
+//                context.startActivity(intent)
+//            }
 
             itemView.setOnClickListener { onClick(vaga) }
         }
