@@ -16,10 +16,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="458dp"
+            android:background="@color/white"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:background="@color/white">
+            android:padding="16dp">
 
             <!-- Título -->
             <TextView
@@ -28,8 +28,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="16dp"
                 android:text="Cadastrar Nova Vaga"
-                android:textSize="20sp"
                 android:textColor="@color/blue1"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
 
@@ -39,8 +39,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="12dp"
-                android:hint="Cidade"
                 android:background="@drawable/custom_edittext"
+                android:hint="Cidade"
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -51,8 +51,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="12dp"
-                android:hint="Estado"
                 android:background="@drawable/custom_edittext"
+                android:hint="Estado"
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -63,8 +63,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="12dp"
-                android:hint="Rua"
                 android:background="@drawable/custom_edittext"
+                android:hint="Rua"
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -75,9 +75,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="12dp"
+                android:background="@drawable/custom_edittext"
                 android:hint="Número do endereço"
                 android:inputType="number"
-                android:background="@drawable/custom_edittext"
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -87,7 +87,7 @@
                 android:id="@+id/btnCriarVaga"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="45dp"
                 android:backgroundTint="@color/blue1"
                 android:text="Criar Vaga"
                 android:textColor="@color/white"

@@ -8,6 +8,18 @@
     <color name="red1">#C42026</color>
     <color name="purple2">#827CD1</color>
     <color name="blue1">#003f70</color>
+    <color name="botaoSair">#1101A0</color>
+    <color name="botaoSair2">#0065E0</color>
+    <color name="botaoSair3">#0065E0</color>
+
+    <color name="fundo1MotoristaTela">#F5F6FA</color>
+    <color name="fundo2MotoristaTela">#E4E8F1</color>
+
+    <color name="borda1MotoristaBotao">#014BA0</color>
+    <color name="fundo1MotoristaBotao">#FFFFFF</color>
+    <color name="fundo2MotoristaBotao">#014BA0</color>
+
+
 
     <color name="pressed_color">#5A6EEF</color>
     <color name="pressed_border_color">#0919A2</color>

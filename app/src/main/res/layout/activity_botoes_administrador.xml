@@ -25,10 +25,11 @@
 
     <Button
         android:id="@+id/btnCriar"
-        android:layout_width="wrap_content"
+        android:layout_width="224dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
         android:text="Criar Reservas"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="20sp" />
 
     <Button
@@ -37,14 +38,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Consultar Reservas"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
+        android:backgroundTint="@color/white"
         android:textSize="20sp" />
 
     <Button
         android:id="@+id/btnSair"
-        android:layout_width="wrap_content"
+        android:layout_width="241dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="110dp"
+        android:backgroundTint="@color/botaoSair2"
         android:text="Sair"
         android:textColor="@android:color/white"
         android:textSize="20sp" />
