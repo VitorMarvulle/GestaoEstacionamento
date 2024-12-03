@@ -222,7 +222,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:backgroundTint="@color/red1"
-                android:text="Sair"
+                android:text="Voltar"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 

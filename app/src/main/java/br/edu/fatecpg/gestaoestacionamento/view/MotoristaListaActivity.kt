@@ -1,5 +1,4 @@
 package br.edu.fatecpg.gestaoestacionamento.view
-
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -9,7 +8,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import br.edu.fatecpg.gestaoestacionamento.MainActivity
 import br.edu.fatecpg.gestaoestacionamento.R
 import br.edu.fatecpg.gestaoestacionamento.adapter.VagaAdapter
 import br.edu.fatecpg.gestaoestacionamento.model.Vaga
@@ -18,17 +16,13 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
 class MotoristaListaActivity : AppCompatActivity() {
-
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
-
     private lateinit var txtSaudacao: TextView
     private lateinit var btnSair: Button
-
     private lateinit var recyclerView: RecyclerView
     private lateinit var vagaAdapter: VagaAdapter
     private lateinit var vagasList: MutableList<Vaga>
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vagas_motorista)
@@ -56,15 +50,12 @@ class MotoristaListaActivity : AppCompatActivity() {
 
         // Botão para sair
         btnSair.setOnClickListener {
-            auth.signOut()
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, MotoristaBotoesActivity::class.java))
             finish()
         }
-
         // Carregar vagas
         loadVagas()
     }
-
     // Função para carregar vagas criadas pelo administrador
     private fun loadVagas() {
         firestore.collection("vagas")

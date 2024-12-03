@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
         android:backgroundTint="@color/red1"
-        android:text="Sair"
+        android:text="Voltar"
         android:textColor="@color/white"
         android:textColorLink="@color/white"
         android:textSize="22sp" />

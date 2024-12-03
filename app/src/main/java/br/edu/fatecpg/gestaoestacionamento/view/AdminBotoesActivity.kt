@@ -3,6 +3,7 @@ package br.edu.fatecpg.gestaoestacionamento.view
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import br.edu.fatecpg.gestaoestacionamento.MainActivity
 import br.edu.fatecpg.gestaoestacionamento.databinding.ActivityBotoesAdministradorBinding
 
 class AdminBotoesActivity : AppCompatActivity() {
@@ -22,6 +23,12 @@ class AdminBotoesActivity : AppCompatActivity() {
         binding.btnCriar.setOnClickListener {
             val intent = Intent(this, AdminFormActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.btnSair.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
     }

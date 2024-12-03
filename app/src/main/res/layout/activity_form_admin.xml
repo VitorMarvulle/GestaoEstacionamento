@@ -32,17 +32,6 @@
                 android:textColor="@color/blue1"
                 android:textStyle="bold" />
 
-            <!-- Número da Vaga -->
-            <EditText
-                android:id="@+id/edtNumeroVaga"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="Número da vaga"
-                android:inputType="number"
-                android:background="@drawable/custom_edittext"
-                android:padding="12dp"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
 
             <!-- Cidade -->
             <EditText

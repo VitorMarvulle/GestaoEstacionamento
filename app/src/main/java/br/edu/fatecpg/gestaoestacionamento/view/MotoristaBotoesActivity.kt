@@ -3,6 +3,7 @@ package br.edu.fatecpg.gestaoestacionamento.view
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import br.edu.fatecpg.gestaoestacionamento.MainActivity
 import br.edu.fatecpg.gestaoestacionamento.databinding.ActivityBotoesAdministradorBinding
 import br.edu.fatecpg.gestaoestacionamento.databinding.ActivityBotoesMotoristaBinding
 
@@ -23,6 +24,12 @@ class MotoristaBotoesActivity : AppCompatActivity() {
         binding.btnCriar.setOnClickListener {
             val intent = Intent(this, MotoristaFormActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.btnSair.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
     }

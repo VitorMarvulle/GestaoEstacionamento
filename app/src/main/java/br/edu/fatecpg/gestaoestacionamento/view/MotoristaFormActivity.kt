@@ -165,10 +165,9 @@ class MotoristaFormActivity : AppCompatActivity() {
         // Lógica do botão "Sair"
         btnSair.setOnClickListener {
             // Realiza o logout do Firebase
-            auth.signOut()
 
             // Redireciona para a MainActivity
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MotoristaBotoesActivity::class.java)
             startActivity(intent)
             finish()
         }

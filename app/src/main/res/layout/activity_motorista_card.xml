@@ -188,7 +188,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
                 android:backgroundTint="@color/red1"
-                android:text="Sair"
+                android:text="Voltar"
                 android:textColor="@android:color/white" />
 
         </LinearLayout>

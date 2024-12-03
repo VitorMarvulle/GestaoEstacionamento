@@ -49,10 +49,9 @@ class AdminListaActivity : AppCompatActivity() {
         // Lógica do botão "Sair"
         btnSair.setOnClickListener {
             // Realiza o logout do Firebase
-            auth.signOut()
 
             // Redireciona para a MainActivity
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, AdminBotoesActivity::class.java)
             startActivity(intent)
             finish()
         }
