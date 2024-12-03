@@ -138,7 +138,7 @@ class MotoristaCardActivity : AppCompatActivity() {
         }
     }
 
-    // Método para iniciar o timer
+    // Metodo para iniciar o timer
     private fun iniciarTimer(tempoRestanteMillis: Long, txtTimer: TextView) {
         val timer = object : CountDownTimer(tempoRestanteMillis, 1000) {
             override fun onTick(millisUntilFinished: Long) {

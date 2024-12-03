@@ -209,12 +209,6 @@
                 android:textSize="20sp"
                 app:cornerRadius="15dp" />
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:visibility="gone" />
 
             <Button
                 android:id="@+id/btnSair"

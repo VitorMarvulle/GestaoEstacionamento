@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.fatecpg.gestaoestacionamento.R
 import br.edu.fatecpg.gestaoestacionamento.model.Vaga
 import br.edu.fatecpg.gestaoestacionamento.view.MotoristaCardActivity
+import br.edu.fatecpg.gestaoestacionamento.view.MotoristaListaActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class VagaAdapter(
@@ -50,7 +52,10 @@ class VagaAdapter(
             txtStatus.text = "Status: ${vaga.status}"
 
             // Ação de clique para o botão de reservar
-//            btnReservar.setOnClickListener {
+            btnReservar.setOnClickListener {
+                Toast.makeText(itemView.context, "Reserva realizada com sucesso!", Toast.LENGTH_SHORT).show()
+            }
+
 //                val context = itemView.context
 //
 //                // Recuperar o nome do usuário logado

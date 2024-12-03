@@ -17,7 +17,6 @@ class ReservaAdapter(
 
     // ViewHolder para a consulta
     class ReservaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val txtSaudacao: TextView = itemView.findViewById(R.id.txtSaudacao)
         val txtTimer: TextView = itemView.findViewById(R.id.txtTimer)
         val txtNome: TextView = itemView.findViewById(R.id.txtNome)
         val txtData: TextView = itemView.findViewById(R.id.txtData)
@@ -46,7 +45,6 @@ class ReservaAdapter(
         val reserva = reservas[position]
 
         // Configura os campos de texto com os dados da reserva
-        holder.txtSaudacao.text = "Usuário: ${reserva.email}"
         holder.txtTimer.text = "Sua reserva:"
         holder.txtNome.text = "${reserva.nome}"
         holder.txtData.text = "Data: ${reserva.data}"
@@ -77,7 +75,7 @@ class ReservaAdapter(
         }
     }
 
-    // Método para iniciar o timer
+    // Metodo para iniciar o timer
     private fun iniciarTimer(tempoRestanteMillis: Long, txtTimer: TextView) {
         val timer = object : CountDownTimer(tempoRestanteMillis, 1000) {
             override fun onTick(millisUntilFinished: Long) {
